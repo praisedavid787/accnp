@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Accurate Numbers & Co. | Financial Clarity, Trusted Partnership",
   description:
     "We help businesses and individuals gain clarity, ensure compliance, and make smarter financial decisions.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
