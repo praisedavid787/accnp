@@ -13,7 +13,7 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Accurate Numbers & Co. | Financial Clarity, Trusted Partnership",
+  title: "Accurate Numbers Partners | Financial Clarity, Trusted Partnership",
   description:
     "We help businesses and individuals gain clarity, ensure compliance, and make smarter financial decisions.",
   icons: {

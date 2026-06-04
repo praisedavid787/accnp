@@ -32,10 +32,13 @@ const faqs = [
   },
 ];
 
-function FAQItem({ q, a, last, first }: { q: string; a: string; last?: boolean; first?: boolean }) {
+function FAQItem({ q, a, last, first, mdLast, mdFirst }: { q: string; a: string; last?: boolean; first?: boolean; mdLast?: boolean; mdFirst?: boolean }) {
   const [open, setOpen] = useState(false);
+  // last/first = last/first of the whole stacked list (mobile); mdLast/mdFirst = last/first of a column (md+ two-column layout)
+  const border = last ? "" : mdLast ? "border-b-[1.5px] border-[#FFFFFF4D] md:border-b-0" : "border-b-[1.5px] border-[#FFFFFF4D]";
+  const pad = first ? "pt-0 pb-3 sm:pb-4" : mdFirst ? "py-3 sm:py-4 md:pt-0" : "py-3 sm:py-4";
   return (
-    <div className={`${last ? "" : "border-b-[1.5px] border-[#FFFFFF4D]"} ${first ? "pt-0 pb-3 sm:pb-4" : "py-3 sm:py-4"} max-w-[406px]`}>
+    <div className={`${border} ${pad} w-full md:max-w-[406px]`}>
       <button
         className="w-full flex items-center justify-between gap-3 text-left"
         onClick={() => setOpen(!open)}
@@ -67,14 +70,14 @@ export default function FAQ() {
   const right = faqs.slice(4);
 
   return (
-    <section className="bg-brand-primary pt-[119px] pb-[119px]" id="faq">
+    <section className="bg-brand-primary pt-[119px] pb-[119px] scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-[92px]" id="faq">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
         <h2 className="text-white text-[36px] font-semibold leading-[132%] mb-8">
           Frequently Asked Questions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 justify-between">
-          <div>{left.map((f, i) => <FAQItem key={f.q} {...f} first={i === 0} last={i === left.length - 1} />)}</div>
-          <div className="flex flex-col items-end">{right.map((f, i) => <FAQItem key={f.q} {...f} first={i === 0} last={i === right.length - 1} />)}</div>
+          <div>{left.map((f, i) => <FAQItem key={f.q} {...f} first={i === 0} mdLast={i === left.length - 1} />)}</div>
+          <div className="flex flex-col md:items-end">{right.map((f, i) => <FAQItem key={f.q} {...f} mdFirst={i === 0} last={i === right.length - 1} />)}</div>
         </div>
       </div>
     </section>

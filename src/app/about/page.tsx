@@ -8,7 +8,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "About Us | Accurate Numbers & Co.",
+  title: "About Us | Accurate Numbers Partners",
   description: "Confidence through accuracy. Learn about our story, mission, vision, and values.",
 };
 

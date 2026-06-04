@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { BOOKING_URL } from "@/lib/site";
 
 function FooterLogo() {
   return (
@@ -25,13 +26,14 @@ export default function Footer() {
           <p className="text-white text-[14px] font-light leading-[132%] mt-[24px] mb-[25px] max-w-[296px]">
             Precise financial management and strategic insight that supports growth.
           </p>
-          {/* TODO(booking): replace #contact route with Cal.com booking popup (free, no backend) — see chat decision. */}
-          <Link
-            href="#contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center self-start bg-[#01417A] text-white text-[14px] font-light leading-[132%] px-[40px] py-[8px] rounded-[5px] hover:opacity-90 transition-opacity"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
 
         {/* Link columns: bottom-aligned with brand as a group, but headings level with each other */}
@@ -61,7 +63,7 @@ export default function Footer() {
             {[
               { label: "LinkedIn", icon: "/assets/linkedin.svg", href: "https://www.linkedin.com/company/accurate-numbers-partner/" },
               { label: "Instagram", icon: "/assets/instagram.svg", href: "https://www.instagram.com/accuratenumberspartners?igsh=MTQ5ZDVpcmUzemZ6Nw%3D%3D&utm_source=qr" },
-              { label: "Twitter", icon: "/assets/twitter.svg", href: "#" },
+              { label: "WhatsApp", icon: "/assets/whatsapp.svg", href: "https://whatsapp.com/channel/0029Vb7dBlqEKyZMJLzKWZ31" },
             ].map(({ label, icon, href }) => (
               <li key={label}>
                 <Link href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white text-[14px] font-light leading-[218%] hover:opacity-80 transition-opacity">

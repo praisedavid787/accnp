@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BOOKING_URL } from "@/lib/site";
 
 export default function CTA() {
   return (
@@ -9,15 +9,17 @@ export default function CTA() {
             Ready to Gain Financial Confidence?
           </h2>
           <p className="text-[#565656] text-[18px] font-normal leading-[132%] mb-6 sm:mb-8 mx-auto max-w-[636px]">
-            Book a consultation today and discover how Accurate Number Partners
+            Book a consultation today and discover how Accurate Numbers Partners
             can support your financial success.
           </p>
-          <Link
-            href="#contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-brand-cta text-white text-[18px] font-normal leading-[132%] px-[60px] py-[13px] rounded-[5px] hover:opacity-90 transition-opacity"
           >
             Schedule a Discovery Call
-          </Link>
+          </a>
         </div>
       </div>
     </section>

@@ -4,21 +4,15 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Strategic insights that help you grow with confidence. Strategic insights that help you grow with confidence.",
-    name: "Managing Director",
-    company: "Procter & Gamble",
+      "The Accurate Numbers team has been very helpful in ensuring we maintain a clear financial position with our partners while remaining compliant. Their advisory service has been pivotal in establishing a proper, compliant bookkeeping system.",
+    name: "Product Partner",
+    company: "Cedwood",
   },
   {
     quote:
-      "Strategic insights that help you grow with confidence. Strategic insights that help you grow with confidence.",
-    name: "CFO",
-    company: "Techy Hub",
-  },
-  {
-    quote:
-      "Strategic insights that help you grow with confidence. Strategic insights that help you grow with confidence.",
-    name: "Head of Finance",
-    company: "Kara Kata",
+      "Working with Accurate Numbers on our tax filing was a smooth and stress-free experience. The Team at Accurate led by Boluwatife was professional, detail-oriented, and ensured everything was handled properly and promptly too. We highly recommend their services.",
+    name: "Pearl & Pearson LP",
+    company: "Law Firm",
   },
 ];
 
@@ -58,7 +52,8 @@ export default function Testimonials() {
   const next = () => { setDir("next"); setActive((a) => (a + 1) % n); };
 
   const animClass = dir === "next" ? "animate-slide-in-right" : "animate-slide-in-left";
-  const visible = [active % n, (active + 1) % n, (active + 2) % n];
+  // show up to 3 cards, but never repeat a testimonial when there are fewer
+  const visible = Array.from({ length: Math.min(n, 3) }, (_, k) => (active + k) % n);
 
   return (
     <section className="pt-[100px] pb-16 bg-white overflow-hidden">

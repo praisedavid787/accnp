@@ -29,7 +29,7 @@ export default function Navbar() {
       </div>
       {open && (
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg px-4 py-4 flex flex-col gap-3 md:hidden z-50">
-          <Link href="/" className="text-[16px] font-light text-black py-1" onClick={() => setOpen(false)}>Services</Link>
+          <Link href="/#services" className="text-[16px] font-light text-black py-1" onClick={() => setOpen(false)}>Services</Link>
           <Link href="/about" className="text-[16px] font-light text-black py-1" onClick={() => setOpen(false)}>About Us</Link>
           <Link href="#contact" className="bg-brand-primary text-white text-[16px] font-light px-[40px] py-2.5 rounded-md text-center" onClick={() => setOpen(false)}>
             Book a Consultation

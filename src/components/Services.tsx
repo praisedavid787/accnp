@@ -67,7 +67,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="pt-10 sm:pt-12 md:pt-16 pb-20 sm:pb-24 md:pb-45" id="services">
+    <section className="pt-10 sm:pt-12 md:pt-16 pb-20 sm:pb-24 md:pb-45 scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-[92px]" id="services">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-[20px] mb-8 sm:mb-10 md:mb-[73px]">

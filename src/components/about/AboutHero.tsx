@@ -11,7 +11,7 @@ export default function AboutHero() {
             Confidence Through<br />Accuracy
           </h1>
           <p className="text-black font-light text-[18px] leading-[132%] max-w-[535px]">
-            Accurate Number Partners was founded on a simple belief:
+            Accurate Numbers Partners was founded on a simple belief:
             financial accuracy builds confidence.
           </p>
         </div>
