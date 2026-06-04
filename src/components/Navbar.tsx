@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "./Logo";
+import { BOOKING_URL } from "@/lib/site";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,9 +14,9 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <Link href="/#services" className="text-[16px] font-light text-black hover:text-brand-primary transition-colors">Services</Link>
           <Link href="/about" className="text-[16px] font-light text-black hover:text-brand-primary transition-colors">About Us</Link>
-          <Link href="#contact" className="bg-brand-cta text-white text-[16px] font-light px-[40px] py-2.5 rounded-md hover:opacity-90 transition-opacity">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-brand-cta text-white text-[16px] font-light px-[40px] py-2.5 rounded-md hover:opacity-90 transition-opacity">
             Book a Consultation
-          </Link>
+          </a>
         </div>
         <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,9 +32,9 @@ export default function Navbar() {
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg px-4 py-4 flex flex-col gap-3 md:hidden z-50">
           <Link href="/#services" className="text-[16px] font-light text-black py-1" onClick={() => setOpen(false)}>Services</Link>
           <Link href="/about" className="text-[16px] font-light text-black py-1" onClick={() => setOpen(false)}>About Us</Link>
-          <Link href="#contact" className="bg-brand-primary text-white text-[16px] font-light px-[40px] py-2.5 rounded-md text-center" onClick={() => setOpen(false)}>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="bg-brand-primary text-white text-[16px] font-light px-[40px] py-2.5 rounded-md text-center" onClick={() => setOpen(false)}>
             Book a Consultation
-          </Link>
+          </a>
         </div>
       )}
     </nav>
