@@ -18,13 +18,14 @@ function FooterLogo() {
 export default function Footer() {
   return (
     <footer className="bg-brand-primary pt-[227px] pb-10 sm:pb-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-end gap-8 md:gap-[143px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-start sm:items-end gap-8 md:gap-16 lg:gap-[143px]">
         {/* Brand */}
         <div className="flex flex-col">
           <FooterLogo />
           <p className="text-white text-[14px] font-light leading-[132%] mt-[24px] mb-[25px] max-w-[296px]">
             Precise financial management and strategic insight that supports growth.
           </p>
+          {/* TODO(booking): replace #contact route with Cal.com booking popup (free, no backend) — see chat decision. */}
           <Link
             href="#contact"
             className="inline-flex items-center justify-center self-start bg-[#01417A] text-white text-[14px] font-light leading-[132%] px-[40px] py-[8px] rounded-[5px] hover:opacity-90 transition-opacity"
@@ -33,6 +34,8 @@ export default function Footer() {
           </Link>
         </div>
 
+        {/* Link columns: bottom-aligned with brand as a group, but headings level with each other */}
+        <div className="flex flex-col sm:flex-row items-start gap-8 md:gap-16 lg:gap-[143px]">
         {/* Quick Links */}
         <div>
           <h4 className="font-display text-white text-[16px] font-semibold leading-[132%] mb-[8px]">Quick Links</h4>
@@ -43,7 +46,7 @@ export default function Footer() {
               { label: "Frequently Asked Questions", href: "/#faq" },
             ].map(({ label, href }) => (
               <li key={label}>
-                <Link href={href} className="text-white text-[14px] font-light leading-[218%] hover:opacity-80 transition-opacity">
+                <Link href={href} className="whitespace-nowrap text-white text-[14px] font-light leading-[218%] hover:opacity-80 transition-opacity">
                   {label}
                 </Link>
               </li>
@@ -68,6 +71,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
         </div>
       </div>
     </footer>

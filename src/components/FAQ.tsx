@@ -72,7 +72,7 @@ export default function FAQ() {
         <h2 className="text-white text-[36px] font-semibold leading-[132%] mb-8">
           Frequently Asked Questions
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 justify-between">
           <div>{left.map((f, i) => <FAQItem key={f.q} {...f} first={i === 0} last={i === left.length - 1} />)}</div>
           <div className="flex flex-col items-end">{right.map((f, i) => <FAQItem key={f.q} {...f} first={i === 0} last={i === right.length - 1} />)}</div>
         </div>

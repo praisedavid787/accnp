@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import Logo from "../Logo";
 
@@ -6,56 +5,35 @@ export default function AboutHero() {
   return (
     <div>
       {/* Top logo */}
-      <div className="px-4 sm:px-6 md:px-12 pt-5 sm:pt-6">
+      <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 md:px-12 h-16 sm:h-20 md:h-[92px] flex items-center">
         <Logo />
       </div>
 
       {/* Hero content */}
-      <section className="px-4 sm:px-6 md:px-12 pt-6 sm:pt-8 pb-4 max-w-6xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row md:items-start gap-8">
+      <section className="px-4 sm:px-6 md:px-12 pt-10 sm:pt-14 md:pt-20 max-w-6xl mx-auto w-full">
+        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-10">
           {/* Left */}
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-primary leading-tight mb-3 sm:mb-4">
+            <h1 className="text-[40px] sm:text-[46px] md:text-[52px] font-extrabold text-brand-primary leading-[100%] mb-4 sm:mb-6">
               Confidence Through<br />Accuracy
             </h1>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
+            <p className="text-black font-light text-[18px] leading-[132%] max-w-[535px]">
               Accurate Number Partners was founded on a simple belief:
               financial accuracy builds confidence.
             </p>
           </div>
 
           {/* Right: Two photos */}
-          <div className="flex gap-3 sm:gap-4 md:justify-end">
-            <div className="flex-1 md:flex-none md:w-44 lg:w-48 h-44 sm:h-52 md:h-56 rounded-xl overflow-hidden">
-              <Image src="/assets/about-photo-1.png" alt="Team member" width={192} height={224} className="w-full h-full object-cover" />
+          <div className="flex gap-8 md:justify-end flex-shrink-0">
+            <div className="flex-1 md:flex-none md:w-[187px] aspect-[187/367] md:aspect-auto md:h-[367px] rounded-2xl overflow-hidden">
+              <Image src="/assets/about-photo-1.png" alt="Team member" width={187} height={367} className="w-full h-full object-cover" />
             </div>
-            <div className="flex-1 md:flex-none md:w-44 lg:w-48 h-44 sm:h-52 md:h-56 rounded-xl overflow-hidden mt-6 sm:mt-8">
-              <Image src="/assets/about-photo-2.png" alt="Team members" width={192} height={224} className="w-full h-full object-cover" />
+            <div className="flex-1 md:flex-none md:w-[187px] aspect-[187/367] md:aspect-auto md:h-[367px] rounded-2xl overflow-hidden">
+              <Image src="/assets/about-photo-2.png" alt="Team members" width={187} height={367} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Floating nav card */}
-      <div className="px-4 sm:px-6 md:px-12 py-4 sm:py-5">
-        <div className="bg-white shadow-lg rounded-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 flex flex-wrap items-center justify-center gap-3 sm:gap-5 md:gap-6 max-w-2xl mx-auto">
-          {["Home", "About Us", "Services", "Contact Us"].map((item) => (
-            <Link
-              key={item}
-              href={item === "Home" ? "/" : item === "About Us" ? "/about" : "#"}
-              className="text-sm text-gray-600 hover:text-brand-primary transition-colors"
-            >
-              {item}
-            </Link>
-          ))}
-          <Link
-            href="#contact"
-            className="bg-brand-primary text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-800 transition-colors"
-          >
-            Book a Consultation
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
