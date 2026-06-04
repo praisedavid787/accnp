@@ -1,5 +1,5 @@
+import Navbar from "@/components/Navbar";
 import AboutHero from "@/components/about/AboutHero";
-import AboutNav from "@/components/about/AboutNav";
 import OurStory from "@/components/about/OurStory";
 import MissionVision from "@/components/about/MissionVision";
 import FAQ from "@/components/FAQ";
@@ -14,9 +14,9 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="relative">
+      <Navbar />
       <AboutHero />
-      <AboutNav />
       <OurStory />
       <MissionVision />
       <FAQ />
