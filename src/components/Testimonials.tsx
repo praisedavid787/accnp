@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Accurate Numbers on our tax filing was a smooth and stress-free experience. The Team at Accurate led by Boluwatife was professional, detail-oriented, and ensured everything was handled properly and promptly too. We highly recommend their services.",
+      "Working with Accurate Numbers on our tax filing was a smooth and stress-free experience. The team was professional, detail-oriented, and ensured everything was handled properly and promptly too. We highly recommend their services.",
     name: "Pearl & Pearson LP",
     company: "Law Firm",
   },
